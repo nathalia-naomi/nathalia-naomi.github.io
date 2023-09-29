@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./styles.css"/>
+    <title>Website</title>
+</head>
+
+<body>
+<header class="header">
+    <button id="toggleMenu" class="modal-btn">
+        &#9776; Menu
+    </button>
+    <h1>Some Website</h1>
+    <div class="social-media">
+        <img class="icon" src="./icons/facebook.svg" alt="Facebook"/>
+        <img class="icon" src="./icons/twitter.svg" alt="Twitter"/>
+        <img class="icon" src="./icons/instagram.svg" alt="Instagram"/>
+        <img class="icon" src="./icons/github.svg" alt="Github"/>
+        <img class="icon" src="./icons/linkedin.svg" alt="LinkedIn"/>
+    </div>
+</header>
+<main>
+    <div id="posts">
+
+    </div>
+
+    <div id="menuModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="closeMenu" class="close">&times;</span>
+                <h2>Menu</h2>
+            </div>
+            <div class="modal-body">
+                <button id="toggleSearch" class="modal-btn">
+                    Search Posts
+                </button>
+                <button id="toggleCreate" class="modal-btn">
+                    Create a New Post
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="searchModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="closeSearch" class="close">&times;</span>
+                <h2>Search</h2>
+            </div>
+            <div class="modal-body">
+                <span class="label">Search posts: </span>
+                <input type="text" name="searchInput" id="searchInput">
+            </div>
+        </div>
+    </div>
+
+    <div id="createModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="closeCreate" class="close">&times;</span>
+                <h2>Create new post</h2>
+            </div>
+            <div class="modal-body">
+                <span class="label">Post title: </span>
+                <input type="text" name="titleInput" id="titleInput">
+                <span class="label">Content: </span>
+                <input type="text" name="contentInput" id="contentInput">
+                <button id="savePost" type="submit">Post</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script type="module" src="./script.js" defer></script>
+
+</body>
+
+</html>
