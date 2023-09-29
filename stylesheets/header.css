@@ -1,0 +1,34 @@
+.header {
+    background-color: gray;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+#menuBtn {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2px 8px;
+    margin: 5px;
+    font-size: 20px;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 8px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}

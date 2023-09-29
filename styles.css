@@ -1,42 +1,8 @@
+@import "stylesheets/header.css";
+@import "stylesheets/menu.css";
+
 * {
     font-family: 'FreeMono', sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-}
-
-.header {
-    background-color: gray;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-h1 {
-    font-size: 40px;
-}
-
-#toggleMenu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 2px 8px;
-    margin: 5px;
-    font-size: 20px;
-}
-
-.social-media {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    margin-top: 8px;
-}
-
-.icon {
-    width: 20px;
-    height: 20px;
 }
 
 #posts {
@@ -61,48 +27,6 @@ h1 {
 
 .post-content {
     font-size: 20px;
-}
-
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-.modal-content {
-    position: fixed;
-    bottom: 0;
-    background-color: gray;
-    width: 100%;
-}
-
-.modal-header {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-}
-
-.modal-body {padding: 10px 20px;}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
 }
 
 @media (max-width: 350px){
