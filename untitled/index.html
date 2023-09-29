@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Post Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="menu"></div>
+<div id="dialog-box"></div>
+
+<section id="post-section">
+    <h2>New Post</h2>
+    <form id="post-form">
+        <label for="title">Title:</label>
+        <input type="text" id="title" required>
+        <label for="description">Description:</label>
+        <textarea id="description" required></textarea>
+        <label for="date">Date:</label>
+        <input type="date" id="date" required>
+        <button type="submit">Add Post</button>
+    </form>
+</section>
+
+<section id="search-section">
+    <h2>Search Post</h2>
+    <input type="text" id="search-input" placeholder="Enter title or date...">
+    <button id="search-button">Search</button>
+</section>
+
+<section id="posts-list">
+    <h2>Posts</h2>
+    <ul id="posts"></ul>
+</section>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
