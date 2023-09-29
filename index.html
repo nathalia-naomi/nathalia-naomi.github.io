@@ -1,17 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="./styles.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
     <title>Website</title>
 </head>
 
 <body>
 <header class="header">
-    <button id="toggleMenu" class="modal-btn">
+    <button id="menuBtn">
         &#9776; Menu
     </button>
     <h1>Some Website</h1>
@@ -23,60 +23,70 @@
         <img class="icon" src="./icons/linkedin.svg" alt="LinkedIn"/>
     </div>
 </header>
+
 <main>
-    <div id="posts">
-
-    </div>
-
-    <div id="menuModal" class="modal">
+    <section id="menu">
         <div class="modal-content">
             <div class="modal-header">
-                <span id="closeMenu" class="close">&times;</span>
                 <h2>Menu</h2>
+                <span id="closeMenu" class="close">&times;</span>
             </div>
             <div class="modal-body">
-                <button id="toggleSearch" class="modal-btn">
+                <button id="openSearch" class="modal-btn">
                     Search Posts
                 </button>
-                <button id="toggleCreate" class="modal-btn">
+                <button id="openNewPost" class="modal-btn">
                     Create a New Post
                 </button>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div id="searchModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span id="closeSearch" class="close">&times;</span>
-                <h2>Search</h2>
-            </div>
-            <div class="modal-body">
-                <span class="label">Search posts: </span>
-                <input type="text" name="searchInput" id="searchInput">
-            </div>
-        </div>
-    </div>
+    <section id="posts-list">
+        <h2>Posts</h2>
+        <ul id="posts"></ul>
+    </section>
 
-    <div id="createModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span id="closeCreate" class="close">&times;</span>
-                <h2>Create new post</h2>
-            </div>
-            <div class="modal-body">
-                <span class="label">Post title: </span>
-                <input type="text" name="titleInput" id="titleInput">
-                <span class="label">Content: </span>
-                <input type="text" name="contentInput" id="contentInput">
-                <button id="savePost" type="submit">Post</button>
-            </div>
-        </div>
-    </div>
+    <section id="post-section">
+        <dialog id="new-post" >
+            <h2>New Post</h2>
+            <form method="dialog" id="post-form">
+                <label for="title">Title:</label>
+                <input type="text" id="title" required>
+
+                <label for="content">Content:</label>
+                <textarea id="content" required></textarea>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+
+                <button type="submit">Add Post</button>
+                <button id="cancel-post" type="reset">Cancel</button>
+            </form>
+        </dialog>
+    </section>
+
+    <section id="search-section">
+        <dialog id="search" >
+            <h2>New Post</h2>
+            <form method="dialog" id="search-form">
+                <label for="title">Title:</label>
+                <input type="text" id="search-input">
+
+                <label for="date">Date:</label>
+                <input type="date" id="search-date">
+
+                <button id="search-button">Search &#128269;</button>
+
+                <button id="cancel-search" type="reset">Cancel</button>
+            </form>
+            <div id="dialog-box"></div>
+        </dialog>
+    </section>
+
 </main>
 
 <script type="module" src="./script.js" defer></script>
 
 </body>
-
 </html>
