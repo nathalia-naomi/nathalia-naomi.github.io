@@ -70,17 +70,18 @@
         <dialog id="search" >
             <h2>New Post</h2>
             <form method="dialog" id="search-form">
-                <label for="title">Title:</label>
-                <input type="text" id="search-input">
+                <label for="search-input">Title:</label><input type="text" id="search-input">
 
-                <label for="date">Date:</label>
-                <input type="date" id="search-date">
+                <label for="search-date">Date:</label><input type="date" id="search-date">
 
                 <button id="search-button">Search &#128269;</button>
 
                 <button id="cancel-search" type="reset">Cancel</button>
             </form>
-            <div id="dialog-box"></div>
+            <section id="search-results">
+                <h2>Results</h2>
+                <ul id="results"></ul>
+            </section>
         </dialog>
     </section>
 
