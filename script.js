@@ -1,32 +1,37 @@
 import {addToggleModal} from "./modules/modals.js";
 import {PostManager} from "./modules/postManager.js";
-import {SearchManager} from "./modules/searchManager.js";
 import {closePostModal} from "./modules/modals.js";
 
 const postManager = new PostManager();
-const searchManager = new SearchManager();
 
 const searchButton = document.getElementById('search-button');
 const searchInput = document.getElementById('search-input');
+const searchDate = document.getElementById('search-date');
 const postForm = document.getElementById('post-form');
 const postList = document.getElementById('posts');
+const searchResults = document.getElementById('results');
 
-searchButton.addEventListener('click', function () {
-    const query = searchInput.value;
-    const results = searchManager.searchPosts(query);
-    postList.innerHTML = '';
+searchButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    const queryInput = searchInput.value;
+    const queryDate = searchDate.value;
+    const results = postManager.searchPosts(queryInput, queryDate);
+    // searchResults.innerHTML = '';
+    searchResults.innerText = '';
+
     results.forEach((post, index) => {
         const li = document.createElement('li');
-        li.textContent = `${post.date} - ${post.title}: ${post.content}`;
+        li.textContent = `${new Date(post.date).toUTCString()} - ${post.title}: ${post.content}`;
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
         deleteButton.addEventListener('click', () => {
             postManager.removePost(index);
             li.remove();
+            displayAllPosts();
             alert('Post removed successfully!');
         });
         li.appendChild(deleteButton);
-        postList.appendChild(li);
+        searchResults.appendChild(li);
     });
 });
 
@@ -50,21 +55,36 @@ postForm.addEventListener('submit', function (event) {
 });
 
 const displayAllPosts = () => {
-    postList.innerHTML = '';
+    postList.innerText = '';
     postManager.posts.forEach((post, index) => {
-        const li = document.createElement('li');
-        li.textContent = `${post.date} - ${post.title}: ${post.content}`;
+        const postElement = createPostElement(post);
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
         deleteButton.addEventListener('click', () => {
             postManager.removePost(index);
-            li.remove();
+            postElement.remove();
             alert('Post removed successfully!');
         });
-        li.appendChild(deleteButton);
-        postList.appendChild(li);
+        postElement.appendChild(deleteButton);
+        postList.appendChild(postElement);
     });
 }
+
+const createPostElement = (post) => {
+    const li = document.createElement('li');
+    const title = document.createElement('h3');
+    title.textContent = post.title;
+    const date = document.createElement('span');
+    date.textContent = new Date(post.date).toUTCString();
+    const content = document.createElement('p');
+    content.textContent = post.content;
+
+    li.appendChild(title);
+    li.appendChild(date);
+    li.appendChild(content);
+
+    return li;
+};
 
 window.onload = () => {
     addToggleModal();

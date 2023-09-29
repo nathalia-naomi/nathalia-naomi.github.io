@@ -35,4 +35,5 @@ function openSearch() {
 
 function cancelSearch() {
     searchModal.close();
+    document.getElementById("results").innerText = '';
 }
