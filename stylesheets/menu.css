@@ -56,13 +56,16 @@ h2 {
 }
 
 @media (max-width: 350px){
+    #menu {
+        width: 80%;
+
+    }
     .modal-content {
         width: 80%;
         margin: 0;
     }
-    #menu {
+    #menuBtn {
         position: relative;
         margin: 1px 0;
-        width: 80%;
     }
 }
