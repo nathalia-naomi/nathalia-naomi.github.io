@@ -21,8 +21,10 @@ export class PostManager {
         let searchFunc;
         if (input && date) {
             searchFunc = (post) => post.title.includes(input) && post.date === date;
-        } else {
-            searchFunc = (post) => post.title.includes(input) || post.date === date;
+        } else if (input) {
+            searchFunc = (post) => post.title.includes(input);
+        } else if (date) {
+            searchFunc = (post) =>  post.date === date;
         }
         return this.posts.filter(searchFunc);
     }

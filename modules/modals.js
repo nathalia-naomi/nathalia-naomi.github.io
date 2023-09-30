@@ -23,6 +23,7 @@ function closeMenu() {
 
 function openNewPostModal() {
     newPostModal.showModal();
+    document.getElementById("post-form").reset();
 }
 
 export function closePostModal() {
@@ -31,9 +32,10 @@ export function closePostModal() {
 
 function openSearch() {
     searchModal.showModal();
+    document.getElementById("search-form").reset();
+    document.getElementById("results").innerText = '';
 }
 
 function cancelSearch() {
     searchModal.close();
-    document.getElementById("results").innerText = '';
 }
