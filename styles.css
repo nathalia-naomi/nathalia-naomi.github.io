@@ -1,44 +1,23 @@
 @import "stylesheets/header.css";
 @import "stylesheets/menu.css";
+@import "stylesheets/posts.css";
 
 * {
     font-family: 'Tahoma', sans-serif;
 }
 
-#posts {
-    width: 75%;
-    height: 100%;
-    margin: 0 auto;
-}
-
-.post {
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid rgb(128, 128, 128);
-}
-
-.post-title {
-    font-size: 28px;
-}
-
-.post-date {
-    font-size: 20px;
-}
-
-.post-content {
-    font-size: 20px;
+body {
+    width: 100%;
+    margin: 0;
 }
 
 @media (max-width: 350px){
-    #menu {
-        position: relative;
-        margin: 1rem 0;
-    }
-
     .post-list {
         margin: 0 0.5rem;
         width: auto;
     }
+
+
 
     .post {
         padding: 1rem 0;

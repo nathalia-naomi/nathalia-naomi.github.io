@@ -16,7 +16,6 @@ searchButton.addEventListener('click', function (event) {
     const queryInput = searchInput.value;
     const queryDate = searchDate.value;
     const results = postManager.searchPosts(queryInput, queryDate);
-    // searchResults.innerHTML = '';
     searchResults.innerText = '';
 
     results.forEach((post, index) => {
@@ -66,6 +65,8 @@ const displayAllPosts = () => {
             alert('Post removed successfully!');
         });
         postElement.appendChild(deleteButton);
+        const separator = document.createElement('hr');
+        postElement.appendChild(separator);
         postList.appendChild(postElement);
     });
 }
