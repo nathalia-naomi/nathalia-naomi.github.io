@@ -8,8 +8,8 @@ export class PostManager {
         this.save();
     }
 
-    removePost(index) {
-        this.posts.splice(index, 1);
+    removePost(postToDelete) {
+        this.posts = this.posts.filter(post => post.title !== postToDelete.title && post.date !== postToDelete.date);
         this.save();
     }
 

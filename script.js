@@ -18,13 +18,13 @@ searchButton.addEventListener('click', function (event) {
     const results = postManager.searchPosts(queryInput, queryDate);
     searchResults.innerText = '';
 
-    results.forEach((post, index) => {
+    results.forEach(post => {
         const li = document.createElement('li');
         li.textContent = `${new Date(post.date).toUTCString()} - ${post.title}: ${post.content}`;
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
         deleteButton.addEventListener('click', () => {
-            postManager.removePost(index);
+            postManager.removePost({...post});
             li.remove();
             displayAllPosts();
             alert('Post removed successfully!');
@@ -55,12 +55,12 @@ postForm.addEventListener('submit', function (event) {
 
 const displayAllPosts = () => {
     postList.innerText = '';
-    postManager.posts.forEach((post, index) => {
+    postManager.posts.forEach(post => {
         const postElement = createPostElement(post);
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
         deleteButton.addEventListener('click', () => {
-            postManager.removePost(index);
+            postManager.removePost(post);
             postElement.remove();
             alert('Post removed successfully!');
         });
