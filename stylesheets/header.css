@@ -1,6 +1,7 @@
 .header {
-    background-color: gray;
-    height: 200px;
+    background-color: #F0F0F0;
+    height: 300px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,15 +9,18 @@
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 50px;
+    margin: 15px auto;
 }
 
 #menuBtn {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 2px 8px;
-    margin: 5px;
+    padding: 7px 15px;
+    margin: 15px;
+    background: none;
+    border: 2px solid #9D9D9D;
     font-size: 20px;
 }
 
@@ -24,11 +28,11 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
     margin-top: 8px;
 }
 
 .icon {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }

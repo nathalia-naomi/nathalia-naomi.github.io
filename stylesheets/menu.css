@@ -4,16 +4,15 @@
     top: 0;
     display: none;
     z-index: 1;
-    width: 30%;
+    width: 40%;
     overflow: auto;
 }
 
 .modal-content {
-    background-color: #fefefe;
-    padding: 20px;
-    border: 1px solid #888;
+    background-color: #F0F0F0;
+    padding: 22px 20px;
+    border: 1px solid #9D9D9D;
     width: 40%;
-    height: 100%;
 }
 
 .modal-header {
@@ -24,6 +23,10 @@
     color: black;
 }
 
+h2 {
+    margin: 0;
+}
+
 .modal-body {
     padding: 10px 20px;
     position: relative;
@@ -31,7 +34,7 @@
 }
 
 .close {
-    color: #aaa;
+    color: #9D9D9D;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -45,8 +48,21 @@
 }
 
 .modal-btn {
-    border: 1px solid lightgray;
+    border: 2px solid lightgray;
     width: 100%;
-    padding: 2px 4px;
-    margin: 10px auto;
+    padding: 5px;
+    margin: 15px auto;
+    font-size: 16px;
+}
+
+@media (max-width: 350px){
+    .modal-content {
+        width: 80%;
+        margin: 0;
+    }
+    #menu {
+        position: relative;
+        margin: 1px 0;
+        width: 80%;
+    }
 }
